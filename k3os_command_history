@@ -1,0 +1,51 @@
+1  sudo vi /etc/ssh/sshd_config
+    2  ls
+    3  ifconfig
+    4  ifconfig | grepeth
+    5  ifconfig | grep eth
+    6  ifconfig eth0
+    7  sude service sshd restart
+    8  sudo service sshd restart
+    9  exit
+   10  
+   11  kubectl create -f dsktop-dply.yaml
+   12  kubectl get pods
+   13  kubectl get pods
+   14  top
+   15  swapon
+   16  top
+   17  apk
+   18  apt
+   19  yum
+   20  sudo fallocate -l 7G /swapfile
+   21  top
+   22  sudo chmod 600 /swapfile
+   23  sudo mkswap /swapfile
+   24  sudo swapon /swapfile
+   25  sudo swapon --show
+   26  sudo vi /etc/fstab
+   27  sudo swapon --show
+   28  sudo free -h
+   29  cat /proc/sys/vm/swappiness
+   30  sudo sysctl vm.swappiness=10
+   31  sudo vi /etc/sysctl.conf
+   32  top
+   33  cat /etc/default/grub
+   34  sudo vi /etc/default/grub
+   35  update-grub
+   36  sudo update-grub
+   37  ls /dev/shm
+   38  ls /dev/
+   39  ls /dev/ |grep sh
+   40  cat /dev/shm
+   41  ls -alt /dev/shm
+   42  history | grep scp
+   43  
+   44  ls
+   45  kubectl apply -f dsktop-dply.yaml
+   46  kubectl get pods
+   47  kubectl exec -it dsktop-test-7cb869d8f-xvsvd /bin/bash
+   48  history
+   49  ls
+   50  cat dsktop-dply.yaml
+   51  history

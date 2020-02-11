@@ -1,0 +1,11 @@
+[Unit]
+Description=x86 UI start
+
+[Service]
+ExecStart=/bin/bash -c /usr/src/app/start_x86.sh
+Restart=always
+StartLimitInterval=0
+RestartSec=0
+
+[Install]
+WantedBy=multi-user.target
