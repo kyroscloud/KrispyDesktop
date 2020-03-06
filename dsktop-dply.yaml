@@ -22,7 +22,8 @@ spec:
       - env:
         - name: DISPLAY
           value: :0.0
-        image: jockdarock/dsktop-test:ubuntu18-04
+        #image: jockdarock/dsktop-test:ubuntu18-04
+        image: jockdarock/dsktop-test:ubuntu18-04-vnc-v0.0
         name: dsktop-test
         securityContext:
           privileged: true
