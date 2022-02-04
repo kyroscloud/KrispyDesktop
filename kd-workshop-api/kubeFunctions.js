@@ -17,7 +17,7 @@ exports.applyWorkshop = async function (node, image) {
 
     // This code block determines if the API is being run for local dev
     if (process.env.DEV == 'true') {
-        kubeconfig.loadFromFile("/Users/jockdarock/jock-projects/KrispyDesktop/k3s.yaml")
+        kubeconfig.loadFromFile()
         console.log("kubeconfig loaded from default dev machine")
     }
     else {
