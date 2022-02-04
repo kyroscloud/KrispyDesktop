@@ -1,0 +1,70 @@
+{
+   "apiVersion": "apps/v1",
+   "kind": "Deployment",
+   "metadata": {
+      "name": "workshop",
+      "labels": {
+         "app": "workshop"
+      }
+   },
+   "spec": {
+      "replicas": 1,
+      "selector": {
+         "matchLabels": {
+            "name": "workshop"
+         }
+      },
+      "tolerations": [
+         {
+            "key": "dedicated",
+            "operator": "Equal",
+            "value": "workshop-app",
+            "effect": "NoSchedule"
+         }
+      ],
+      "template": {
+         "metadata": {
+            "labels": {
+               "app": "workshop",
+               "name": "workshop"
+            }
+         },
+         "spec": {
+            "containers": [
+               {
+                  "env": [
+                     {
+                        "name": "DISPLAY",
+                        "value": ":0.0"
+                     }
+                  ],
+                  "image": "jockdarock/dsktop-test:ubuntu20-04",
+                  "name": "workshop",
+                  "resources": {},
+                  "securityContext": {
+                        "privileged": true
+                  },
+                  "volumeMounts": [
+                     {
+                         "mountPath": "/dev/shm",
+                         "name": "dshm"
+                     }
+                 ]
+               }
+            ],
+            "nodeName": "k3os-5524",
+            "hostNetwork": true,
+            "restartPolicy": "Always",
+            "securityContext": {},
+            "volumes": [
+               {
+                  "emptyDir": {
+                      "medium": "Memory"
+                  },
+                  "name": "dshm"
+              }
+            ]
+         }
+      }
+   }
+}

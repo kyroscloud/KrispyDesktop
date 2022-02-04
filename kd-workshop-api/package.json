@@ -1,0 +1,22 @@
+{
+  "name": "krispy_api",
+  "version": "0.0.7",
+  "description": "API to Support KrispyDesktop scheduling",
+  "main": "index.js",
+  "author": "Jock Reed",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "nodemon -r dotenv/config ./index.js"
+  },
+  "dependencies": {
+    "async": "^3.2.1",
+    "express": "^4.17.1",
+    "kubernetes-client": "^9.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "mongodb": "^4.1.3",
+    "nodemon": "^2.0.13"
+  }
+}

@@ -1,0 +1,8 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: krispy-api-role
+rules:
+- apiGroups: ["", "apps", "v1", "extensions", "v1beta1", "networking.k8s.io"]
+  resources: ["pods", "deployments", "nodes", "services", "ingresses", "secrets"]
+  verbs: ["list", "create", "get", "update", "patch", "delete"]

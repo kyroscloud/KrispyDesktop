@@ -1,0 +1,7 @@
+FROM jockdarock/dsktop-test:ubuntu18-04
+
+RUN wget https://dl.pstmn.io/download/latest/linux64 && tar -xvf linux64 -C /usr/bin && export PATH=$PATH:/usr/bin/Postman
+
+COPY Postman.desktop /usr/share/applications/Postman.desktop
+
+RUN chmod a+x /usr/share/applications/Postman.desktop

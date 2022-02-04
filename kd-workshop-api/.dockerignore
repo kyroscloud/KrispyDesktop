@@ -1,0 +1,17 @@
+node_modules
+#npm-debug.log
+README.md  
+#deploy.cmd  
+#gulpfile.js  
+#scripts  
+#src  
+web.config  
+yarn-error.log
+.deployment
+.git
+.gitignore
+.vscode
+Dockerfile
+.dockerignore
+.env
+.env.template

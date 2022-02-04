@@ -1,0 +1,42 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add express
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jockdarock/Library/Application Support/cloud-code/installer/google-cloud-sdk/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  14.18.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/jockdarock/jock-projects/KrispyDesktop/api/package.json: Unexpected token } in JSON at position 274
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "Krispy API",
+    "version": "0.0.7",
+    "description": "API to Support KrispyDesktop scheduling",
+    "main": "index.js",
+    "author": "Jock Reed",
+    "license": "MIT",
+    "scripts": {
+      "start": "node ./index.js",
+      "dev": "nodemon -r dotenv/config ./index.js",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

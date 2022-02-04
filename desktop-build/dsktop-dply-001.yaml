@@ -1,29 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dsktop-test
+  name: workshop-k3os-15989
   labels:
-    app: dsktop-test
+    app: workshop-k3os-15989
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dsktop-test
+      app: workshop-k3os-15989
   template:
     metadata:
       labels:
-       app: dsktop-test
+       app: workshop-k3os-15989
     spec:
       volumes:
         - name: dshm
           emptyDir:
             medium: Memory
+      nodeName: k3os-15989
       containers:
       - env:
         - name: DISPLAY
           value: :0.0
-        image: jockdarock/dsktop-test:ubuntu18-04
-        name: dsktop-test
+        image: jockdarock/postmantest:v0.0.2
+        name: workshop-k3os-15989
         securityContext:
           privileged: true
         volumeMounts:

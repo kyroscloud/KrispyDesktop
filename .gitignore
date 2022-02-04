@@ -1,0 +1,6 @@
+.env
+desktop-build/.env
+kd-workshop-api/.env
+kd-workshop-api/node_modules
+temp
+scheduler

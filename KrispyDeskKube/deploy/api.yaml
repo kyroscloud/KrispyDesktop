@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      name: api
+  template:
+    metadata:
+      labels:
+        app: api
+        name: api
+    spec:
+      containers:
+      - env:
+        - name: DEV
+          value: 'false'
+        - name: MONGOURL
+          value: mongodb+srv://gandalf:oFEx3ZT9YduuaTT6@cluster0.dzcus.mongodb.net/KrispyData?retryWrites=true&w=majority
+        - name: MONGODB
+          value: KrispyData
+        image: jockdarock/krisp-api:v0.5.2 #Insert Image name Here
+        name: api
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 500Mi
+          requests:
+            cpu: 20m
+            memory: 200Mi
+      imagePullSecrets:
+      - name: azureregcred
+      restartPolicy: Always
+      serviceAccount: krispy-api-account
+      serviceAccountName: krispy-api-account

@@ -1,0 +1,61 @@
+{
+   "apiVersion": "apps/v1",
+   "kind": "Deployment",
+   "metadata": {
+       "labels": {
+           "app": "dsktop-test-001"
+       },
+       "name": "dsktop-test-001"
+   },
+   "spec": {
+       "replicas": 1,
+       "selector": {
+           "matchLabels": {
+               "app": "dsktop-test-001"
+           }
+       },
+       "template": {
+           "metadata": {
+               "labels": {
+                   "app": "dsktop-test-001"
+               }
+           },
+           "spec": {
+               "containers": [
+                   {
+                       "env": [
+                           {
+                               "name": "DISPLAY",
+                               "value": ":0.0"
+                           }
+                       ],
+                       "image": "jockdarock/postmantest:v0.0.2",
+                       "name": "dsktop-test",
+                       "resources": {},
+                       "securityContext": {
+                           "privileged": true
+                       },
+                       "volumeMounts": [
+                           {
+                               "mountPath": "/dev/shm",
+                               "name": "dshm"
+                           }
+                       ]
+                   }
+               ],
+               "hostNetwork": true,
+               "nodeName": "k3os-5524",
+               "restartPolicy": "Always",
+               "securityContext": {},
+               "volumes": [
+                   {
+                       "emptyDir": {
+                           "medium": "Memory"
+                       },
+                       "name": "dshm"
+                   }
+               ]
+           }
+       }
+   }
+}
